@@ -79,7 +79,7 @@ void display(int st[])
     }
 }
 
-int peek()
+int peek(int st[])
 {
     if (top == -1)
     {
@@ -93,7 +93,7 @@ int peek()
     }
 }
 
-int pop()
+int pop(int st[])
 {
     int val;
 
