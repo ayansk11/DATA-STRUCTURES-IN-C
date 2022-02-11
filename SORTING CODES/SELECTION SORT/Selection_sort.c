@@ -20,7 +20,8 @@ int main(int argc, char const *argv[])
         printf("%d\t", arr[i]);
     }
     printf("\n");
-
+    
+    printf("PERFORMING SELECTION SORT ON THE ARRAY....... \n");
     for (int i = 0; i < s - 1; i++)
     {
         min = i;
@@ -32,6 +33,7 @@ int main(int argc, char const *argv[])
                 min = j;
             }
         }
+        
         temp = arr[min];
         arr[min] = arr[i];
         arr[i] = temp;
