@@ -1,9 +1,12 @@
 #include <stdio.h>
 
+int arr[100];
+
+void selection_sort(int arr[], int s);
+
 int main(int argc, char const *argv[])
 {
-    int arr[100];
-    int s, min, temp;
+    int s;
 
     printf("ENTER THE SIZE OF THE ARRAY: \n");
     scanf("%d", &s);
@@ -20,24 +23,9 @@ int main(int argc, char const *argv[])
         printf("%d\t", arr[i]);
     }
     printf("\n");
-    
-    printf("PERFORMING SELECTION SORT ON THE ARRAY....... \n");
-    for (int i = 0; i < s - 1; i++)
-    {
-        min = i;
 
-        for (int j = i+1; j < s; j++)
-        {
-            if (arr[j] < arr[min])
-            {
-                min = j;
-            }
-        }
-        
-        temp = arr[min];
-        arr[min] = arr[i];
-        arr[i] = temp;
-    }
+    printf("PERFORMING SELECTION SORT ON THE ARRAY........\n");
+    selection_sort(arr, s);
 
     printf("PRINTING THE SORTED ARRAY: \n");
     for (int i = 0; i < s; i++)
@@ -46,4 +34,26 @@ int main(int argc, char const *argv[])
     }
 
     return 0;
+}
+
+
+void selection_sort(int arr[], int s)
+{
+    int min, temp;
+
+    for (int i = 0; i < s - 1; i++)
+    {
+        min = i;
+
+        for (int j = i + 1; j < s; j++)
+        {
+            if (arr[j] < arr[min])
+            {
+                min = j;
+            }
+        }
+        temp = arr[min];
+        arr[min] = arr[i];
+        arr[i] = temp;
+    }
 }
