@@ -37,11 +37,12 @@ int main(int argc, char const *argv[])
     return 0;
 }
 
+
 void insertion_sort(int arr[], int s)
 {
-    int temp, currindex = 0;
+    int temp, currindex;
 
-    for (int i = 0; i < s; i++)
+    for (int i = 1; i < s; i++)
     {
         currindex = i;
 
